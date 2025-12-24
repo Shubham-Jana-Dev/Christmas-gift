@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Merry Christmas | Shubham Jana</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Quicksand:wght@300;500;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 overflow-hidden">
+
+    <button id="mute-btn" onclick="toggleMute()" class="fixed top-5 right-5 z-[100] bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded-full transition-all">
+        <span id="mute-icon" class="text-xl">🔊</span>
+    </button>
+
+    <div id="main-view" class="text-center z-10 transition-all duration-700 w-full">
+        <h1 class="xmas-font text-5xl md:text-7xl text-white mb-2 drop-shadow-2xl">A Developer's Gift</h1>
+        <p class="text-base md:text-xl text-yellow-100 mb-12 opacity-90">Tiffany-wrapped for you... with ❤️ from Shubham Jana</p>
+        
+        <div class="gift-container mx-auto" id="gift-trigger" onclick="handleOpen()">
+            <div class="gift-lid" id="lid">
+                <div class="bow-loop"></div>
+                <div class="bow-loop right"></div>
+                <div class="bow-knot"></div>
+            </div>
+            <div class="gift-box">
+                <div class="glint"></div>
+                <div class="ribbon-v"></div>
+                <div class="ribbon-h"></div>
+            </div>
+            <div id="open-text" class="mt-12 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-yellow-400 animate-pulse">Execute Open()</div>
+        </div>
+    </div>
+
+    <div id="surprise-card" class="fixed inset-0 flex items-center justify-center p-4 z-50 pointer-events-none">
+        <div class="bg-white text-gray-800 p-6 md:p-10 rounded-[2.5rem] max-w-md w-full text-center relative shadow-2xl pointer-events-auto border-4 border-yellow-500/20 opacity-0 scale-90 transition-all duration-700 invisible">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-yellow-400 to-green-500 rounded-t-full"></div>
+
+            <div class="mb-6 relative inline-block floating">
+                <div class="w-24 h-24 rounded-3xl bg-emerald-900 flex items-center justify-center border-4 border-emerald-700 shadow-xl">
+                    <span class="text-emerald-400 text-4xl font-bold code-font tracking-tighter">&lt;/&gt;</span>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold mb-1 text-gray-900 xmas-font">Shubham Jana</h2>
+            <p class="text-xs text-red-600 font-black mb-6 tracking-widest uppercase bg-red-50 py-1 px-4 rounded-full inline-block">Fullstack Explorer</p>
+
+            <div class="lucky-token mb-6" onclick="generateFortune()">
+                <div class="token-pulse"></div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-bold text-yellow-900 uppercase tracking-widest opacity-70">Lucky Debugger Token</span>
+                    <span class="text-yellow-800 text-xs">✨</span>
+                </div>
+                <div class="bg-white/40 rounded-xl p-4 min-h-[80px] flex items-center justify-center border border-white/50">
+                    <p id="fortune-text" class="text-sm font-bold text-yellow-950 italic">Tap to activate your 2025 luck!</p>
+                </div>
+                <div class="mt-3 text-[10px] font-black text-yellow-900 uppercase tracking-tighter">Click to Re-roll</div>
+            </div>
+
+            <div class="text-left mb-6">
+                <h3 class="text-[10px] font-black uppercase text-gray-400 mb-3 tracking-widest flex items-center gap-2">
+                    <span class="h-px bg-gray-200 flex-grow"></span> Resource Bundle <span class="h-px bg-gray-200 flex-grow"></span>
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="https://roadmap.sh" target="_blank" class="p-3 bg-gray-50 rounded-2xl flex flex-col items-center gap-1 hover:bg-yellow-50 transition-all border border-transparent hover:border-yellow-200">
+                        <span class="text-xl">📚</span>
+                        <span class="text-[10px] font-bold text-gray-800">Roadmaps</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=jfKfPfyJRdk" target="_blank" class="p-3 bg-gray-50 rounded-2xl flex flex-col items-center gap-1 hover:bg-yellow-50 transition-all border border-transparent hover:border-yellow-200">
+                        <span class="text-xl">🎧</span>
+                        <span class="text-[10px] font-bold text-gray-800">Lofi Beats</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center gap-6 pt-4 border-t border-gray-100">
+                <a href="https://github.com/Shubham-Jana-Dev" target="_blank" class="text-xs font-bold text-gray-500 hover:text-black transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/shubham-jana-3b650628a" target="_blank" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors">LinkedIn</a>
+            </div>
+
+            <button onclick="resetMagic()" class="mt-6 text-[10px] text-gray-300 hover:text-red-500 uppercase font-black tracking-widest transition-colors">Close Dashboard</button>
+        </div>
+    </div>
+
+    <audio id="xmas-audio" src="assets/jingle-bells-short-454803.mp3" preload="auto" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
